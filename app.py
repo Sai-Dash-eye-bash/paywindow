@@ -27,8 +27,9 @@ def create_checkout_session():
                 "quantity": 1,
             }],
             mode="payment",
-            success_url="http://localhost:8080/success",
-            cancel_url="http://localhost:8080/cancel",
+            success_url="https://yourapp.onrender.com/success",
+            cancel_url="https://yourapp.onrender.com/cancel",
+
         )
         return jsonify({"id": session.id})
     except Exception as e:
