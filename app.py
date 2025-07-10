@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, jsonify
 import stripe
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
+CORS(app)
+
 
 app = Flask(__name__)
 load_dotenv()
