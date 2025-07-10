@@ -3,10 +3,9 @@ import stripe
 import os
 from dotenv import load_dotenv
 from flask_cors import CORS
-CORS(app)
-
 
 app = Flask(__name__)
+CORS(app)
 load_dotenv()
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
