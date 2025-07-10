@@ -1,0 +1,16 @@
+<script src="https://js.stripe.com/v3/"></script>
+<button id="checkout-button">Checkout</button>
+
+<script>
+  var stripe = Stripe('pk_test_51RjOv4DBN8LyliKgkC6JjGBC6C0v20NFLL2W8RIMVPG0lere58hZ9tf1wL8TASe18X5sCiJcTYyrD8yKliToJB7u00XYcbOx6Z');
+  document.getElementById('checkout-button').addEventListener('click', function () {
+    fetch('/create-checkout-session', {
+      method: 'POST',
+    })
+    .then(response => response.json())
+    .then(session => {
+      return stripe.redirectToCheckout({ sessionId: session.id });
+    })
+    .catch(error => console.error(error));
+  });
+</script>
