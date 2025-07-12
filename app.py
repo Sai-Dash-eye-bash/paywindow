@@ -29,8 +29,8 @@ def create_checkout_session():
                 "quantity": 1,
             }],
             mode="payment",
-            success_url="https://yourapp.onrender.com/success",
-            cancel_url="https://yourapp.onrender.com/cancel",
+            success_url="https://paywindow.onrender.com/success",
+            cancel_url="https://paywindow.onrender.com/cancel",
 
         )
         return jsonify({"id": session.id})
